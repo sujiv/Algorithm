@@ -48,7 +48,7 @@ public class BubbleSort2 extends Sorter {
 		int[] test = {21,13,1,-22, 51, 5, 18};
 		BubbleSort2 bs = new BubbleSort2();
 		
-		System.out.println(Arrays.toString(bs.sort(test)));
+		//System.out.println(Arrays.toString(bs.sort(test)));
 		
 	}
 

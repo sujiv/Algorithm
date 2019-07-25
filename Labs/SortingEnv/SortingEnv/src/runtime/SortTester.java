@@ -106,7 +106,6 @@ public class SortTester {
 				start = time();
 				nextSorter.sort(testArrays[sortIndex][i]);
 				finish = time();
-				//System.out.println(Arrays.toString(newarr));
 				/* debugging 
 				if(i==5 || i ==15){
 					System.out.println(Arrays.toString(testArrays[0][i]));
@@ -114,6 +113,8 @@ public class SortTester {
 				nextTimeArr[i] = finish-start;
 				//System.out.println(nextSorter.getClass()+" inp:"+Arrays.toString(testArrays[sortIndex][i]).substring(0,50));
 			}
+			//System.out.println(nextSorter.getClass().getCanonicalName()+":"+Arrays.toString(testArrays[sortIndex][NUM_TESTS-1]).substring(0,15));
+			
 			String name = util.Util.getClassNameNoPackage(nextSorter.getClass());
 			results.put(sum(nextTimeArr),name);
 		}
