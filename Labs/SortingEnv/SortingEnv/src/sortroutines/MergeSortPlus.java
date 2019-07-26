@@ -13,7 +13,6 @@ public class MergeSortPlus extends Sorter {
 	int[] theArray;
 	InsertionSort isort = new InsertionSort();
 	
-	
 	//public sorter
 	public int[] sort(int[] input){
 		int n = input.length;
@@ -64,7 +63,7 @@ public class MergeSortPlus extends Sorter {
 		if(lower==upper){
 			return;
 		}
-		else if(upper-lower<=5) {
+		else if(upper-lower<=20) {
 			insertionSort(lower,upper);
 		}
 		else {

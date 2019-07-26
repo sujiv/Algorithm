@@ -24,6 +24,7 @@ public class SelectionSort extends Sorter {
 		
 	}
 	void swap(int i, int j){
+		//System.out.println("Swapping:"+arr[i]+":"+arr[j]);
 		int temp = arr[i];
 		arr[i] = arr[j];
 		arr[j] = temp;
@@ -43,7 +44,7 @@ public class SelectionSort extends Sorter {
 		return index;
 	}
 	public static void main(String[] args){
-		int[] test = {21,13,1,-22, 51, 5, 18};
+		int[] test = {-40,5,5,21,13,1,-22, 51, 5, 18};
 		SelectionSort ss = new SelectionSort();
 		
 		System.out.println(Arrays.toString(ss.sort(test)));
