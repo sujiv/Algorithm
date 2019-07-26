@@ -11,7 +11,7 @@ import java.util.*;
 public class SortTester {
 	private final String PACKAGE = "sortroutines";
 	private final String FILENAME = "sorters_to_be_run.txt";
-	private final int[] ARRAY_SIZES = {20,20,20,20};//{500,1000,4000, 5000}; //only four different sizes allowed
+	private final int[] ARRAY_SIZES = {10000,10000,10000, 10000}; //only four different sizes allowed
 	private final int NUM_TESTS = 40;
 	private int numSortRoutines = 0;
 	private int[][][] testArrays;
