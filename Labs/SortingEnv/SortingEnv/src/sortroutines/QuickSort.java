@@ -14,20 +14,20 @@ public class QuickSort extends Sorter {
 	
 	public static void main(String[] args){
 		QuickSort qs = new QuickSort();
-		int[] input = {4, 10, 7, 3, 9, 5, 2, 8, 1, 6};
+		int[] input = {4, 10, 7, 3, 9, 5, 2, 8, 1, 6};//
 		
 		System.out.println(Arrays.toString(input));
 		int[] result = qs.sort(input);
 		
-		System.out.println(Arrays.toString(result));		
+		System.out.println(Arrays.toString(returnPrepared(result)));		
 	}
-	private void printPrepared(int[] prep){
-		System.out.print("[");
-		for(int i = 1; i < prep.length-2; ++i) {
-			System.out.print(""+prep[i]+", ");
-		}
-		System.out.println(prep[prep.length-2]+"]");
-	}
+//	private void printPrepared(int[] prep){
+//		System.out.print("[");
+//		for(int i = 1; i < prep.length-2; ++i) {
+//			System.out.print(""+prep[i]+", ");
+//		}
+//		System.out.println(prep[prep.length-2]+"]");
+//	}
 	/* Insert a lower and upper sentinel */
 	private int[] prepare(int[] input){
 		int[] prepared = new int[input.length+2];
@@ -39,7 +39,7 @@ public class QuickSort extends Sorter {
 		return prepared;
 	}
 	/* Return the array with sentinels removed */
-	private int[] returnPrepared(int[] prep){
+	private static int[] returnPrepared(int[] prep){
 		int[] retVal = new int[prep.length-2];
 		for(int i = 1; i <=retVal.length; ++i){
 			retVal[i-1]= prep[i];
@@ -94,6 +94,7 @@ public class QuickSort extends Sorter {
 		int temp = arr[i];
 		arr[i]=arr[j];
 		arr[j] = temp;
+		System.out.println("i:"+i+ " j:"+j);
 		
 	}
 	/** returns the position of the median of first, last, and middle array elements */
