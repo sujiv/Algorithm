@@ -1,2 +1,7 @@
-MergeSort
+BubbleSort
 MergeSortPlus
+MergeSort
+InsertionSort
+SelectionSort
+BSTSort
+QuickSort

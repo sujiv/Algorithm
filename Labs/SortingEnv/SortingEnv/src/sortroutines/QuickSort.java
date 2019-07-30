@@ -94,7 +94,6 @@ public class QuickSort extends Sorter {
 		int temp = arr[i];
 		arr[i]=arr[j];
 		arr[j] = temp;
-		System.out.println("i:"+i+ " j:"+j);
 		
 	}
 	/** returns the position of the median of first, last, and middle array elements */

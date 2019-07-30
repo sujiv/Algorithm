@@ -19,7 +19,6 @@ public class MergeSortPlus extends Sorter {
 		int[] tempStorage = new int[n];
 		theArray = input;
 		mergeSort(tempStorage,0,n-1);
-//		System.out.println(Arrays.toString(theArray));
 		return theArray;
 	}
 	
@@ -150,7 +149,7 @@ public class MergeSortPlus extends Sorter {
 	
 	private void displayArray(int[] arr){
 		for(int i = 0; i < arr.length; ++i){
-			System.out.print(arr[i] + " ");
+			System.out.print(arr[i] + " sdf");
 		}
 	}
 

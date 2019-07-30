@@ -11,7 +11,7 @@ import java.util.*;
 public class SortTester {
 	private final String PACKAGE = "sortroutines";
 	private final String FILENAME = "sorters_to_be_run.txt";
-	private final int[] ARRAY_SIZES = {10000,10000,10000, 10000}; //only four different sizes allowed
+	private final int[] ARRAY_SIZES = {1000,7000,15000, 10000}; //only four different sizes allowed
 	private final int NUM_TESTS = 40;
 	private int numSortRoutines = 0;
 	private int[][][] testArrays;
@@ -111,9 +111,7 @@ public class SortTester {
 					System.out.println(Arrays.toString(testArrays[0][i]));
 				}*/
 				nextTimeArr[i] = finish-start;
-				//System.out.println(nextSorter.getClass()+" inp:"+Arrays.toString(testArrays[sortIndex][i]).substring(0,50));
 			}
-			//System.out.println(nextSorter.getClass().getCanonicalName()+":"+Arrays.toString(testArrays[sortIndex][NUM_TESTS-1]).substring(0,15));
 			
 			String name = util.Util.getClassNameNoPackage(nextSorter.getClass());
 			results.put(sum(nextTimeArr),name);

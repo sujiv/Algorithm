@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Stack;
 
 public class Main {
 
@@ -16,7 +17,36 @@ public class Main {
 //		System.out.println(check(new int[] {-2,-1,0,1,4,6,7,8,9,12},0));
 //		System.out.println(check(new int[] {0,2,4,6,7,8,9,12},0));
 //		System.out.println(Arrays.toString(alterSort(new int[]{1, 2, 17, -4, -6, 8})));
-		System.out.println(countOne(new int[] {1, 2, 4, 9, 3, 2, 1, 4, 5}));
+//		System.out.println(countOne(new int[] {1, 2, 4, 9, 3, 2, 1, 4, 5}));
+		System.out.println(reverseWord("we test coders"));
+	}
+	
+	public static String reverseWord(String s) {
+		String sRet = "";
+		List<Stack<Character>> stkList = new ArrayList<>();
+		int i=0;
+		stkList.add(new Stack<Character>());
+		for(Character c:s.toCharArray()) {
+			if(c==' ') {
+				i++;
+				continue;
+			}
+			if(stkList.size()<i+1)
+				stkList.add(new Stack<Character>());
+			
+			stkList.get(i).push(c);
+		}
+		i=0;
+		for(Stack<Character> stk:stkList) {
+			while(!stk.isEmpty()) {
+				sRet = sRet+stk.pop();
+				StringBuilder sb = new StringBuilder();
+				sb.append(stk.toArray());
+				//System.out.println(i++);
+			}
+			sRet = sRet+" ";
+		}
+		return sRet.substring(0,sRet.length()-1);
 	}
 	public static int countOne(int[] s) {
 		int[] cnt = new int[3*s.length-1];
