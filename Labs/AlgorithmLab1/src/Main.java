@@ -12,9 +12,38 @@ public class Main {
 //		System.out.print(Arrays.toString(reverse(new int[] {1, 2, 4, 3, 5})));//sort012(new int[] {0,2,2,1,1,0,2,1,0})));
 //		System.out.println(subsetSum(new ArrayList<>(Arrays.asList(1,4,2,3,7,8,9)),19));
 //		System.out.println(Arrays.toString(subsetSum(new int[] {1,4,2,3,7,8,9},29)));
-		System.out.println(check(new int[] {-8,-5,-1,0,2,5,6},0));
-		System.out.println(check(new int[] {-2,-1,0,1,4,6,7,8,9,12},0));
-		System.out.println(check(new int[] {0,2,4,6,7,8,9,12},0));
+//		System.out.println(check(new int[] {-8,-5,-1,0,2,5,6},0));
+//		System.out.println(check(new int[] {-2,-1,0,1,4,6,7,8,9,12},0));
+//		System.out.println(check(new int[] {0,2,4,6,7,8,9,12},0));
+//		System.out.println(Arrays.toString(alterSort(new int[]{1, 2, 17, -4, -6, 8})));
+		System.out.println(countOne(new int[] {1, 2, 4, 9, 3, 2, 1, 4, 5}));
+	}
+	public static int countOne(int[] s) {
+		int[] cnt = new int[3*s.length-1];
+		for(int i=0;i<s.length;i++) {
+			cnt[s[i]]++;
+		}
+		for(int j=0;j<s.length;j++) {
+			if(cnt[s[j]]==1)
+				return s[j];
+		}
+		return 0;
+	}
+	public static int[] alterSort(int[] a) {
+		int dir = 1;
+		int[] ans = new int[a.length];
+		for(int i=0;i<a.length;i++) {
+			dir=0-dir;
+			int tmp = 0;
+			for(int j=0;j<a.length-i;j++) {
+				if(a[tmp]*dir<a[j]*dir) {
+					tmp=j;
+				}
+			}
+			ans[i]=a[tmp];
+			a[tmp]=a[a.length-1-i];
+		}
+		return ans;
 	}
 	
 	public static Integer check(int[] A, int lower) {
