@@ -18,7 +18,16 @@ public class Main {
 //		System.out.println(check(new int[] {0,2,4,6,7,8,9,12},0));
 //		System.out.println(Arrays.toString(alterSort(new int[]{1, 2, 17, -4, -6, 8})));
 //		System.out.println(countOne(new int[] {1, 2, 4, 9, 3, 2, 1, 4, 5}));
-		System.out.println(reverseWord("we test coders"));
+//		System.out.println(reverseWord("we test coders"));
+		System.out.println(isPrime(111));
+	}
+	public static boolean isPrime(int n) {
+		for(int i=2;i<=Math.sqrt(n);i++) {
+			if(n%i==0) {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	public static String reverseWord(String s) {
