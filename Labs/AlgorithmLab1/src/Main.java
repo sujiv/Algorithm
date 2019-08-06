@@ -19,7 +19,21 @@ public class Main {
 //		System.out.println(Arrays.toString(alterSort(new int[]{1, 2, 17, -4, -6, 8})));
 //		System.out.println(countOne(new int[] {1, 2, 4, 9, 3, 2, 1, 4, 5}));
 //		System.out.println(reverseWord("we test coders"));
-		System.out.println(isPrime(111));
+//		System.out.println(isPrime(111));
+		System.out.println(sqSum(1000));
+	}
+	
+	public static int sqSum(int sum) {
+		int sqrt = (int) Math.floor(Math.sqrt(sum));
+		if(sqrt*sqrt==sum) {
+			System.out.println("square of :"+sqrt);
+			return 1;
+		}
+		else {
+			System.out.println("square of :"+sqrt);
+			return 1+sqSum(sum-sqrt*sqrt);
+		}
+			
 	}
 	public static boolean isPrime(int n) {
 		for(int i=2;i<=Math.sqrt(n);i++) {
