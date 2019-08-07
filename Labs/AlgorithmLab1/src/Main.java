@@ -20,7 +20,46 @@ public class Main {
 //		System.out.println(countOne(new int[] {1, 2, 4, 9, 3, 2, 1, 4, 5}));
 //		System.out.println(reverseWord("we test coders"));
 //		System.out.println(isPrime(111));
-		System.out.println(sqSum(1000));
+//		System.out.println(sqSum(1000));
+		
+		System.out.println(longestSub("regular","rular"));
+	}
+	
+	public static int longestSub(String S1, String S2) {
+		int[][] D = new int[S1.length()][S2.length()];
+		for(int i=0;i<S1.length();i++) {
+		for(int j=0;j<S2.length();j++) {
+		D[i][j] = -1;
+		}
+		}
+		int result = recurseLongSub(S1,S2,S1.length()-1,S2.length()-1,D);
+		for(int i=0;i<S1.length();i++)
+		System.out.println(Arrays.toString(D[i]));
+		return result;
+		// return D[S1.length()-1][S2.length()-1];
+	}
+	
+	private static int recurseLongSub(String s1, String s2, int i, int j, int[][] D) {
+		if(i==0||j==0) {
+		return 0;
+		}
+		if(s1.charAt(i-1)==s2.charAt(j-1)) {
+		if(D[i-1][j-1]==-1) {
+		D[i-1][j-1]=recurseLongSub(s1,s2,i-1,j-1,D);
+		}
+		D[i][j]=D[i-1][j-1]+1;
+		}
+		else {
+		if(D[i-1][j]==-1)
+		D[i-1][j]=recurseLongSub(s1,s2,i-1,j,D);
+		if(D[i][j-1]==-1)
+		D[i][j-1]=recurseLongSub(s1,s2,i,j-1,D);
+		D[i][j] = Math.max(D[i-1][j], D[i][j-1]);
+		}
+		System.out.println("----------------------------");
+		for(int k=0;k<s1.length();k++)
+			System.out.println(Arrays.toString(D[k]));
+		return D[i][j];
 	}
 	
 	public static int sqSum(int sum) {
