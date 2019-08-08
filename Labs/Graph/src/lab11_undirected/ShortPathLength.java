@@ -43,13 +43,13 @@ public class ShortPathLength extends BreadthFirstSearch {
 		while(!queue.isEmpty()){
 			Vertex v = nextUnvisitedAdjacent(queue.peek());
 			while(v!=null) { 
-				System.out.println("Vertex: "+v);
+//				System.out.println("Vertex: "+v);
 				setHasBeenVisited(v);
 				processEdge(new Edge(queue.peek(),v));
 				processVertex(v);
 				queue.add(v);
 				v=nextUnvisitedAdjacent(queue.peek());
-				System.out.println("Queue: "+queue);
+//				System.out.println("Queue: "+queue);
 			}
 			queue.remove();
 		}
